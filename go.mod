@@ -1,10 +1,10 @@
-module github.com/nathanjcochran/upgrade
+module github.com/nicheinc/upgrade
 
-go 1.22
+go 1.24.0
 
 require (
-	golang.org/x/mod v0.17.0
-	golang.org/x/tools v0.20.0
+	golang.org/x/mod v0.29.0
+	golang.org/x/tools v0.38.0
 )
 
-require golang.org/x/sync v0.7.0 // indirect
+require golang.org/x/sync v0.17.0 // indirect
