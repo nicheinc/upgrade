@@ -41,7 +41,7 @@ dependencies in the go.mod file to the highest major version available.
 
 If given, [module] must be a fully qualified module path, as written in the
 go.mod file. It must include the major version component, if applicable. For
-example: "github.com/nathanjcochran/upgrade/v2".
+example: "github.com/nicheinc/upgrade/v2".
 
 If [version] is given, it must be a valid semver module version. It can be
 provided with any level of major/minor/patch specificity - e.g. 'v2', 'v2.3',
@@ -128,7 +128,7 @@ func writeModFile(dir string, f *modfile.File) {
 	}
 
 	filePath := path.Join(dir, "go.mod")
-	if err := ioutil.WriteFile(filePath, out, 0644); err != nil {
+	if err := ioutil.WriteFile(filePath, out, 0o644); err != nil {
 		log.Fatalf("Error writing module file %s: %s", filePath, err)
 	}
 }
@@ -394,7 +394,6 @@ func upgradePath(path, version string) (string, error) {
 	newPath := fmt.Sprintf("%s/%s", prefix, major)
 	if err := module.CheckPath(newPath); err != nil {
 		return "", fmt.Errorf("invalid module path after upgrade - %s: %s", newPath, err)
-
 	}
 	return newPath, nil
 }
