@@ -1,4 +1,4 @@
-module github.com/nicheinc/upgrade
+module github.com/nathanjcochran/upgrade
 
 go 1.24.0
 
